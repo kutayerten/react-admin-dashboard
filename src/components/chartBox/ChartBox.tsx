@@ -6,10 +6,10 @@ type Props ={
     color:string;
     icon:string;
     title:string;
-    dateKey:string;
+    dataKey:string;
     number: number | string;
     percentage: number;
-    chartDate: object[];
+    chartData: object[];
 }
 
 export const ChartBox = (props : Props) => {
