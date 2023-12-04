@@ -1,18 +1,19 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query"
 import "./add.scss"
+import { GridColDef  } from "@mui/x-data-grid"
 
 type Props = {
     slug: string,
     columns: GridColDef[],
-    setOpen: React.Dispatch<React.SetStateAction<boolean>>,
-}
+    setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+};
 
 const Add = (props: Props) => {
 
     const queryClient = useQueryClient();
     
     const mutation = useMutation({
-      mutationFn:(id:number)=>{
+      mutationFn:()=>{
        console.log('hangi slug'+props.slug);
         return fetch(`http://localhost:8800/api/${props.slug}s`,
          {
